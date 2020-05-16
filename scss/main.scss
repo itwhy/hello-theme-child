@@ -1,0 +1,50 @@
+////
+/// Import all files
+/// Order do matter
+///
+////
+
+/// Settings
+@import 'functions/mixins';
+@import 'settings/colors';
+@import 'settings/dimensions';
+@import 'settings/fonts';
+@import 'settings/grid';
+
+// Generic
+@import 'generic/normalize';
+@import 'generic/reset';
+
+@import "bulma/utilities/_all";
+@import "bulma/grid/columns";
+$column-gap: 3rem !important;
+// Tools (helper, mixins and function)
+// @import 'tools/'
+
+
+// Base
+@import 'elements/body';
+@import 'elements/menu';
+@import 'elements/blocks';
+@import 'elements/headings';
+@import 'elements/forms';
+@import 'elements/links';
+@import 'elements/gallery';
+@import 'elements/entry';
+@import 'elements/faq';
+@import 'elements/step';
+@import 'elements/popup';
+
+// Objects
+@import 'objects/container';
+@import 'objects/list-inline';
+@import 'objects/link-block';
+@import 'objects/forms';
+@import 'objects/alignements';
+@import 'objects/highlights';
+
+// Components
+// @import 'components/'
+
+// Trumps
+@import 'trumps/print';

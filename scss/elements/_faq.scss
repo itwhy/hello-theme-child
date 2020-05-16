@@ -1,0 +1,156 @@
+.tquestion {
+  font-size: 2em;
+  font-family: $playfair;
+  font-style: italic;
+  font-weight: 100;
+  color: $black;
+
+  @include respond-to(540px) {
+    text-align: center;
+    padding: 25px 15px !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  &:after {
+    content: "+";
+    font-family: $roboto;
+    font-size: 2em;
+    color: white;
+    font-weight: 500;
+    font-style: normal;
+    position: relative;
+    top: 5px;
+    margin-left: 30px;
+    transition: margin-left .5s ease-in-out;
+
+    @include respond-to(540px) {
+      content: none;
+    }
+  }
+
+  &:hover {
+    &:after {
+      margin-left: 60px;
+      transition: margin-left .4s ease-in-out;
+    }
+  }
+}
+
+a.question {
+
+  display: block;
+  padding: 0px 20px 15px;
+  background-color: $beige;
+  margin-bottom: 15px;
+  float: left;
+  clear: left;
+  cursor: pointer;
+
+
+}
+
+@for $i from 1 through 15 {
+
+  .question:nth-child(#{$i}) {
+    background-color: lighten($beige, $i * 2.5%);
+  }
+}
+
+.faq {
+  margin-bottom: 60px !important;
+}
+
+.vsepa {
+  border-right: 2px dashed $bleu;
+}
+
+.ac > .ac-q {
+
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px 20px 15px;
+  background-color: #e6e2d7;
+
+  //margin-bottom: 15px;
+  &.avant {
+    background-color: $bleu !important;
+  }
+
+  &.apres {
+    background-color: $grey !important;
+  }
+
+  &.pendant {
+    background-color: $beige !important;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.ac > .ac-a {
+  overflow: hidden;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  padding-left: 20px;
+  margin-bottom: 15px;
+
+  > p {
+    max-width: 640px;
+    text-align: justify;
+    padding: 5px 15px;
+  }
+
+  &.avant {
+    border-left: 3px solid $bleu;
+  }
+
+  &.pendant {
+    border-left: 3px solid $beige;
+  }
+
+  &.apres {
+    border-left: 3px solid $grey;
+  }
+
+}
+
+
+.ac.js-enabled > .ac-a {
+  visibility: hidden;
+}
+
+.ac.is-active > .ac-a {
+  visibility: visible;
+}
+
+.ac.is-active > .ac-q {
+  &:after {
+    content: '\2013';
+
+    @include respond-to(540px) {
+      content: none;
+    }
+  }
+}
+
+#foire-aux-questions {
+  @include respond-to(768px) {
+    .align-right {
+
+      text-align: left !important;
+      margin-bottom: 30px;
+    }
+
+    .column:last-child {
+      height: 350px;
+    }
+  }
+
+}

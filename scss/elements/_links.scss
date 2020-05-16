@@ -1,0 +1,218 @@
+////
+/// Links & buttons
+///
+/// @group Elements
+///
+////
+
+button,
+a {
+  text-decoration: none;
+  color: $dark-beige;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button {
+  background-color: transparent;
+  color: $color-link;
+}
+
+a.card:hover {
+  span.btn {
+    border: 1px solid $dark-beige;
+    transition: border .2s, color .2s;
+    color: $dark-beige;
+  }
+}
+
+a.btn,
+span.btn {
+  display: inline-block;
+  padding: 15px;
+  border: 1px solid $dark-blue;
+  font-size: 1.4em;
+  color: $black;
+  margin-top: 15px;
+  text-transform: uppercase;
+  transition: border .2s, color .2s;
+
+  &:hover {
+    border: 1px solid $dark-beige;
+    transition: border .2s, color .2s;
+    color: $dark-beige;
+
+  }
+
+  svg {
+    height: 15px;
+    position: relative;
+    top: 3px;
+    margin-right: 10px;
+    fill: darken($dark-beige, 15%);
+  }
+}
+
+a.cta {
+  display: block;
+  padding: 30px;
+  transition: background-color .3s;
+
+  @include respond-to(1024px) {
+    min-height: 258px !important;
+  }
+
+  @include respond-to(768px) {
+    min-height: auto !important;
+  }
+
+  h3 {
+    color: white;
+    margin-bottom: 0;
+    transition: color .3s;
+
+  }
+
+  &.bleu {
+    background-color: $dark-blue;
+    border: 2px solid $dark-blue;
+
+    p {
+      color: darken($bleu, 60%);
+    }
+
+    &:hover {
+      background-color: white;
+      transition: background-color .3s;
+
+      h3 {
+        color: $dark-blue;
+        transition: color .3s;
+      }
+    }
+  }
+
+  &.beige {
+    background-color: $dark-beige;
+    border: 2px solid $dark-beige;
+
+    p {
+      color: darken($beige, 60%);
+    }
+
+    &:hover {
+      background-color: white;
+      transition: background-color .3s;
+
+      h3 {
+        color: $dark-beige;
+        transition: color .3s;
+      }
+    }
+  }
+
+  &.covid-block {
+    //background-color: $dark-beige;
+    border: 2px solid $beige;
+          transition: background-color .3s;
+
+    p {
+      color: darken($beige, 60%);
+      display: inline-block;
+    }
+    svg.chevron {
+        width: 15px;
+        height: auto;
+        display: inline-block;
+        position: relative;
+        top: 7px;
+        margin-left: 15px;
+        fill: darken($beige, 30%);
+        transition: fill .3s;
+      }
+    h3 {
+      color: darken($beige, 30%);
+      font-family: $roboto;
+      text-transform: uppercase;
+      transition: color .3s;
+      svg {
+        width: 40px;
+        height: auto;
+        display: inline;
+        position: relative;
+        top: 5px;
+        margin-right: 10px;
+        fill: darken($beige, 30%);
+      }
+    }
+
+    &:hover {
+      background-color: $beige;
+
+      h3 {
+        color: white;
+        
+      }
+      svg.chevron{
+        fill: white !important;
+      }
+    }
+  }
+}
+
+.phone-mobile {
+  z-index: 9999999;
+  box-shadow: 0 0 50px rgba(black, .2);
+  position: fixed;
+  bottom: 0;
+  background-color: darken($dark-blue, 50%);
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+
+  a {
+    display: block;
+
+    &.call {
+      background-color: darken($dark-blue, 20%);
+    }
+
+    &.map {
+      background-color: darken($beige, 20%);
+    }
+
+
+    text-align: center;
+    padding: 15px 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: $roboto;
+    text-transform: uppercase;
+    font-weight: $fw-bolder;
+    font-size: 2em;
+    color: white;
+
+    svg {
+      fill: white;
+      opacity: .5;
+      max-width: 22px;
+      position: relative;
+      top: 3px;
+      margin-left: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .phone-mobile {
+    display: none;
+  }
+}
+
+.address {
+  text-align: center !important;
+}

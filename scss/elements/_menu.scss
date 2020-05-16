@@ -1,0 +1,373 @@
+.logo {
+  display: block;
+  width: 350px;
+  margin: 20px 0;
+
+  @include respond-to(1050px) {
+    overflow: hidden;
+    width: 80px;
+
+    img {
+      min-width: 280px;
+    }
+  }
+}
+
+header {
+  position: relative;
+  z-index: 99999;
+}
+
+///// VISIBLE NAV /////
+.visible-nav {
+  margin: 40px 0;
+  text-align: right;
+}
+
+.facebook,
+.instagram,
+.news {
+  a {
+    height: 50px;
+    padding: 10px;
+
+    svg {
+      height: 23px;
+      fill: $black;
+      transition: fill .3s;
+    }
+
+    &:hover {
+      > svg {
+        fill: $dark-blue !important;
+        transition: fill .3s;
+      }
+    }
+  }
+}
+
+.sepa {
+  display: block;
+  background-color: $dark-blue;
+  height: 23px;
+  width: 2px;
+  margin: 0 20px;
+  position: relative;
+  bottom: 1px
+}
+
+$top-span: 0px;
+
+.trigger {
+  cursor: pointer;
+  height: 50px;
+  padding: 10px;
+
+  .menu-text {
+    font-family: $roboto;
+    font-size: 1.4em;
+    letter-spacing: .5em;
+    color: $black;
+    position: relative;
+    font-weight: 500;
+    top: 5px;
+    margin-right: 10px;
+    transition: color .2s;
+
+    @include respond-to(540px) {
+      display: none;
+    }
+  }
+
+  .burger {
+    position: relative;
+
+    span {
+      display: block;
+      background-color: $black;
+      height: 3px;
+      width: 20px;
+      position: relative;
+      border-radius: 4px;
+      transition: background-color .2s, width .2s, top .2s;
+
+      &.top {
+        top: $top-span;
+      }
+
+      &.middle {
+        width: 30px;
+        top: $top-span + 8;
+      }
+
+      &.middle-bis {
+        width: 30px;
+        top: $top-span + 4;
+      }
+
+      &.bottom {
+        width: 22px;
+        top: $top-span + 11;
+      }
+    }
+  }
+
+  &:hover {
+    .menu-text {
+      color: $dark-blue;
+      transition: color .2s;
+    }
+
+    .burger span {
+      background-color: $dark-blue;
+      transition: background-color .2s, width .2s, top .2s;
+
+      &.top {
+        top: $top-span - 2;
+        width: 30px;
+      }
+
+      &.bottom {
+        width: 30px;
+        top: $top-span + 13;
+      }
+    }
+  }
+}
+
+
+
+///////// HIDDEN MENU //////
+.hidden-nav {
+  display: none;
+
+  &.no-more-hidden {
+    display: block;
+  }
+
+  .menu-items {
+    position: absolute;
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    z-index: 1000;
+
+    .show-up {
+      opacity: 0;
+      position: relative;
+      right: 30px;
+
+    }
+
+    .span-menu {
+      display: block;
+      //width: 100%;
+      font-family: $playfair;
+      font-style: italic;
+      font-size: 1.8em;
+      color: darken($dark-blue, 10%);
+      margin-right: 35px;
+      text-align: right !important;
+    }
+
+    ul {
+      text-align: right;
+
+      li {
+        &.selected {
+          a {
+            color: darken($dark-blue, 20%) !important;
+
+          }
+
+        }
+
+        list-style: none;
+
+
+        &.main {
+          margin: 0 35px 15px 0;
+
+          a {
+            padding: 15px 0px;
+            background-color: rgba($bleu, 0);
+            font-family: $roboto;
+            text-transform: uppercase;
+            font-weight: $fw-bolder;
+            letter-spacing: .3em;
+            transition: background-color .3s, padding .3s ease, color .3s;
+
+
+            @include respond-to(540px) {}
+
+            color: $black;
+
+            &:hover {
+              padding: 15px 30px;
+              color: white;
+              background-color: rgba($dark-blue, 1);
+              transition: background-color .3s, padding .3s ease, color .3s;
+            }
+          }
+        }
+
+        &.secondary {
+          margin: 0 35px 10px 0;
+
+          a {
+            padding: 5px 0;
+            background-color: rgba($dark-beige, 0);
+            font-family: $roboto;
+            font-weight: $fw-bolder;
+            font-size: 1em;
+            color: darken($dark-blue, 50%) !important;
+
+            &:hover {
+              padding: 5px 10px;
+              color: white !important;
+              background-color: rgba($dark-beige, 1);
+              transition: background-color .3s, padding .3s ease, color .3s;
+            }
+          }
+
+          &:last-child a {
+            color: #e17055 !important;
+
+            &:hover {
+              padding: 5px 10px;
+              color: white !important;
+              background-color: rgba(#e17055, 1);
+              transition: background-color .3s, padding .3s ease, color .3s;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  .back-menu {
+    position: fixed;
+    display: block;
+    background: lighten($bleu, 5%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity .3s;
+    opacity: 0;
+  }
+}
+
+////// FOOTER ///////
+footer {
+  margin-bottom: 60px;
+
+  a.footer-item {
+    font-family: $roboto;
+    font-weight: $fw-bolder;
+    color: darken($beige, 15%);
+  }
+
+  ul.actus-footer {
+    li {
+      border-bottom: 1px dashed $bleu;
+      a {
+        font-family: $playfair !important;
+        font-style: italic;
+        color: darken($bleu, 25%);
+        font-weight: 700;
+      }
+    }
+  }
+
+  .address {
+    text-align: left !important;
+    @include respond-to(540px) {
+    
+    text-align: center !important;
+    }
+    h4 {
+      font-size: 2em;
+      font-weight: $fw-semibold;
+      margin-top: 0;
+
+      span {
+        font-size: 80%;
+        font-family: $playfair;
+        font-weight: $fw-regular;
+        font-style: italic;
+      }
+    }
+
+    a.phone {
+      color: $black;
+      font-size: 1.7em;
+      font-weight: $fw-bold;
+    }
+  }
+
+  .menu-footer {
+    ul {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    ul li {
+      list-style: none;
+
+      a {
+        font-family: $roboto;
+      }
+    }
+
+    .head-menu-footer {
+      font-size: 2em;
+      font-weight: $fw-semibold;
+      margin-top: 0;
+    }
+  }
+}
+
+.mention {
+  a {
+    font-family: $roboto;
+    font-style: normal;
+    color: darken($bleu, 40%);
+  }
+
+  width: 100%;
+  background-color: lighten($bleu, 6%);
+  text-align: center;
+  padding: 15px;
+  font-size: 1.4em;
+
+  span {
+    color: $dark-blue;
+    margin: 0 30px;
+  }
+}
+
+
+//////// BREADCRUMB //////
+#breadcrumbs {
+  a {
+    text-transform: uppercase;
+    font-size: 1.6em;
+    color: darken($dark-beige, 20%);
+  }
+
+  .divider {
+    display: inline-block;
+    position: relative;
+    width: 8px;
+    top: 2px;
+    margin-right: 10px;
+
+    svg {
+      fill: darken($dark-beige, 20%);
+    }
+  }
+}

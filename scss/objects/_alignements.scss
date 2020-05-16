@@ -1,0 +1,25 @@
+////
+/// Alignement
+///
+/// @group Objects
+///
+////
+.align-left { text-align: left; }
+.align-center { 
+  text-align: center; 
+
+}
+.align-right { text-align: right; 
+  @include respond-to(540px) {
+    text-align: center !important;
+  }}
+.align-justify {
+  text-align: justify;
+  &.align-center { text-align-last: center; }
+}
+
+.middle{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

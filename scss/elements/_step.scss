@@ -1,0 +1,139 @@
+@for $i from 1 through 5 {
+  .step:nth-child(#{$i}) {
+    background-image: url('../../../images/step'+ $i + '.gif');
+  }
+}
+
+@media screen and (max-width:540px) {
+  @for $i from 1 through 5 {
+    .step:nth-child(#{$i}) {
+      background-image: url('../../../images/step'+ $i + '-mobile.gif') !important;
+
+    }
+  }
+}
+
+.step {
+  background-color: $bleu;
+  min-height: 400px;
+  padding-top: 200px;
+  background-size: contain !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+
+  padding-bottom: 30px;
+
+  &:last-child {
+    padding-bottom: 60px !important;
+  }
+
+  &:first-child {
+    padding-top: 250px !important;
+
+    @include respond-to(540px) {
+      padding-top: 280px !important;
+    }
+  }
+
+  @include respond-to(540px) {
+    padding-top: 300px;
+    padding-bottom: 0px;
+  }
+
+  .number {
+    /*-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: cover;
+    background-position: center center;*/
+    //
+    font-family: $playfair !important;
+    font-size: 40em;
+    color: darken($beige, 10%);
+    line-height: 0;
+    font-weight: 900;
+    position: relative;
+    top: 30px;
+
+    &#n3 {
+      top: 0px;
+    }
+
+    &#n4 {
+      top: 0px;
+    }
+
+    &#n5 {
+      top: -20px;
+    }
+
+    @include respond-to(540px) {
+      top: 0px;
+
+      &#n3 {
+        top: -50px;
+      }
+
+      &#n4 {
+        top: -50px;
+      }
+
+      &#n5 {
+        top: -50px;
+      }
+
+    }
+  }
+
+  p {
+    max-width: 640px;
+
+  }
+
+  h3 {
+    @include respond-to(540px) {
+      text-align: center !important;
+    }
+  }
+
+  .p-left p {
+    margin: 0 auto 0 0;
+
+    @include respond-to(540px) {
+      text-align: justify;
+      padding: 0 20px;
+    }
+  }
+
+  .p-right p {
+    margin: 0 0 0 auto;
+
+    @include respond-to(540px) {
+      text-align: justify;
+      padding: 0 20px;
+    }
+  }
+}
+
+
+/// COVID STEPS ///
+.proto {
+  p.warn{
+    padding: 10px;
+    border: 2px dashed $beige;
+  }
+  strong {
+    background-color: lighten($beige, 5%);
+  }
+  h4{
+    font-size: 2.4em;
+  }
+  .title {
+    border-right: 4px solid $bleu;
+
+    h3 {
+      text-align: right;
+      font-size: 4em;
+      font-weight: 900;
+    }
+  }
+}

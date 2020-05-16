@@ -1,0 +1,87 @@
+////
+/// Headings
+///
+/// @group Elements
+///
+////
+
+/// Contents
+li { margin: 5px 0; }
+p { margin: 15px 0; }
+p, li, td, th, textarea, caption, pre, blockquote, label, input, select, textarea { font-size: 1.7em; line-height: 1.8; letter-spacing: 0.03em;}
+td p, td .bodytext { margin: 0; }
+strong, optgroup { font-weight: $fw-bold; }
+
+hr{
+  background-color: $dark-blue;
+  height: 2px;
+  width: 80px;
+  padding: 0;
+  margin: 0;
+  &.hr-section{
+    margin: 40px auto;
+    &.int{
+      margin: 15px auto;
+    }
+  }
+  &.sepa-actu{
+    width: 100%;
+    margin: 30px 0;
+    background-color: white;
+    border-top: 2px dashed $dark-blue;
+  }
+  &.hr-right{
+    margin-right: 0;
+    margin-left: auto;
+    @include respond-to(540px) {
+      margin-right: auto;
+    }
+  }
+  &.hr-menu{
+    margin: 30px 35px 30px auto
+  }
+  &.hr-footer{
+    display: block;
+    background-color: white;
+    border-bottom: 1px solid $dark-blue;
+    border-top: 1px solid $dark-blue;
+    width: 100%;
+    height: 6px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+.debug{
+  background-color: $grey;
+  border-radius: 5px;
+  padding: 15px;
+  p{
+    font-size: 1.6em;
+    color: darken($grey, 70%);
+    padding: 0;
+    margin: 0;
+    font-family: monospace, monospace;
+    &:before{
+      content: "_";
+    }
+  }
+}
+.youtube-content{
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+}
+.youtube {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56%;
+  iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

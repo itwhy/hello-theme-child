@@ -1,0 +1,310 @@
+////
+/// Forms
+///
+/// @group Elements
+///
+////
+
+$type-list: text tel email url search date time datetime month week number password;
+
+@each $type in $type-list {
+  [type="#{$type}"] {
+    border: 1px solid $dark-blue;
+    border-radius: 5px;
+    background-color: $white;
+    padding-left: 20px;
+    height: 60px;
+    font-size: 2em;
+    width: 100%;
+    margin-bottom: 15px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+select {
+  border: 1px solid $dark-blue;
+  border-radius: 5px;
+  background-color: $white;
+  font-size: 2em;
+  padding-left: 20px;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 15px;
+
+}
+
+textarea {
+  border: 1px solid $dark-blue;
+    border-radius: 5px;
+    background-color: $white;
+    padding-left: 20px;
+    font-size: 2em;
+    width: 100%;
+    margin-bottom: 15px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-video {
+  padding: 30px;
+  background-color: $bleu;
+  
+  label {
+    font-size: 1.4em;
+    color: darken($dark-blue, 30%);
+  }
+
+  .buttons {
+    margin-top: 15px;
+
+    > button {
+      padding: 20px 30px;
+      font-size: 1.6em;
+      color: white;
+      border-radius: 5px;
+      width: calc(50% - 15px);
+
+      &:first-child {
+        float: left;
+        background-color: darken($dark-blue, 30%);
+
+      }
+
+      &:last-child {
+        background-color: darken($bleu, 10%);
+
+        float: right;
+      }
+    }
+  }
+}
+.form-bienvenue {
+  padding: 30px;
+  background-color: $beige;
+  
+  label {
+    font-size: 1.4em;
+    color: darken($dark-beige, 30%);
+  }
+
+  .buttons {
+    margin-top: 15px;
+
+    > button {
+      padding: 20px 30px;
+      font-size: 1.6em;
+      color: white;
+      border-radius: 5px;
+      width: calc(50% - 15px);
+
+      &:first-child {
+        float: left;
+        background-color: darken($dark-beige, 30%);
+
+      }
+
+      &:last-child {
+        background-color: darken($beige, 10%);
+
+        float: right;
+      }
+    }
+  }
+}
+
+#private,
+#private-n {
+  label {
+    display: none;
+  }
+
+  input {
+    width: 60%;
+    border-color: $bleu;
+  }
+
+  button {
+    width: 60%;
+    padding: 20px 30px;
+    font-size: 1.6em;
+    color: white;
+    border-radius: 5px;
+    background-color: darken($dark-blue, 30%);
+
+  }
+}
+
+#form-result .message-success {
+  background-color: #00b894;
+  margin-bottom: 5px;
+
+  .message {
+    padding: 15px;
+    color: white;
+    font-size: 1.7em;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+
+#contact-us {
+  margin-top: 30px;
+
+  input {
+    border: none !important;
+    border-bottom: 1px solid $dark-blue !important;
+    border-radius: 0 !important;
+    padding: 15px 0 !important;
+    font-family: $playfair;
+    width: 70%;
+
+    &::placeholder {
+      color: darken($dark-blue, 30%) !important;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $black !important;
+
+    }
+    @include respond-to(540px) {
+              border-bottom: 1px solid darken($dark-blue, 5%) !important;
+
+    width: 100% !important;
+    }
+  }
+
+  textarea {
+    border: none !important;
+    border-bottom: 1px solid $dark-blue !important;
+    border-radius: 0 !important;
+    padding: 15px 0 !important;
+    height: 200px;
+    font-family: $playfair;
+    width: 70%;
+
+    &::placeholder {
+
+      color: darken($dark-blue, 30%) !important;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $black !important;
+
+    }
+    @include respond-to(540px) {
+    
+    width: 100% !important;
+          border-bottom: 1px solid darken($dark-blue, 5%) !important;
+
+    }
+  }
+
+  label {
+    display: none;
+  }
+
+  .buttons {
+    margin-top: 30px;
+
+    > button {
+      padding: 20px 30px;
+      font-size: 1.6em;
+      color: white;
+      border-radius: 5px;
+      width: 70%;
+
+      background-color: darken($dark-blue, 20%);
+      @include respond-to(540px) {
+    
+    width: 100% !important;
+
+    }
+    }
+  }
+}
+
+.add-content {
+  padding: 30px 0px;
+}
+
+.infos a {
+  color: darken($dark-beige, 20%);
+}
+.infos #form-result .message-success {
+  background-color: white;
+  margin-top: 15px;
+
+  .message {
+    padding: 15px;
+    color: #00b894;;
+    font-size: 1.7em;
+    text-align: left;
+    font-weight: 600;
+  }
+}
+
+a.add-phone {
+  display: block;
+  padding: 10px 0;
+  font-size: 3em !important;
+  font-weight: $fw-regular !important;
+  letter-spacing: inherit !important;
+
+  svg {
+    fill: darken($dark-beige, 20%);
+    height: 20px;
+  }
+}
+
+.image-info{
+  width: 100%;
+  background-color: lighten($beige, 4%);
+  overflow: hidden;
+
+  &.info1{
+    height: 400px;
+    img{
+    min-height: 100%;
+    width: auto !important;
+  }
+  }
+  &.info2{
+    height: 400px;
+      img{
+    min-height: 100%;
+    width: auto !important;
+  }
+  }
+  &.info3{
+    
+    margin-top: 20px;
+
+  
+  }
+}
+.consult{
+  textarea{
+    height: 200px;
+  }
+  input, select{
+    height: 40px;
+    
+  }
+  .form-spacer {
+    padding: 15px 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    hr{
+      width: 100%;
+      border: 1px dashed darken($bleu, 10%);
+      height: 0px;
+      background-color: transparent;
+    }
+  }
+}

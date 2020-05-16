@@ -1,0 +1,184 @@
+a.card {
+  @include respond-to(1025px) {
+    margin-bottom: 20px;
+  }
+  display: block;
+  cursor: pointer;
+  padding: 30px;
+  position: relative;
+  background-size: cover;
+  color: $black !important;
+  .content {
+    margin-top: 200px;
+    background-color: white;
+    padding: 30px;
+
+    p {
+      max-width: 300px;
+      margin: auto;
+    }
+  }
+
+  @include respond-to(540px) {
+    padding: 15px;
+
+    .content {
+      margin-top: 150px;
+      padding: 20px;
+      min-height: auto;
+    }
+  }
+}
+
+.entry {
+  box-shadow: 0 0 0px rgba($black, 0);
+  transition: box-shadow .4s, padding .4s;
+
+  > .content {
+    min-height: 310px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 60px rgba($black, .1);
+    padding: 30px 20px;
+    transition: box-shadow .4s, padding .4s;
+  }
+
+}
+
+.boss {
+}
+
+.card.equipe .content p {
+  max-width: none;
+
+}
+
+.equipe {
+  padding: 30px;
+  @include respond-to(540px) {
+    padding: 15px;
+    text-align: left !important;
+  }
+  &.assist{
+  max-width: 700px;
+  margin: auto;
+
+  }
+  h3 {
+    text-transform: capitalize;
+    font-weight: $fw-bolder;
+    margin: 0;
+  }
+
+  h4 {
+    font-family: $playfair;
+    color: $dark-blue;
+    font-style: italic;
+    font-size: 2em;
+  }
+
+  &.card {
+    background-color: $beige;
+  }
+}
+
+.alaune {
+  padding: 20px;
+  margin: 30px 0 0;
+  border: 2px dashed $bleu;
+  border-radius: 5px;
+
+  a {
+    line-height: 1.4;
+    color: $black;
+
+    svg {
+      fill: darken($bleu, 10%) !important;
+      max-height: 40px;
+    }
+
+    h4 {
+      font-size: 1.7em;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+
+      > span {
+        color: darken($dark-beige, 10%) !important;
+      }
+    }
+  }
+}
+
+.bandeau-actu {
+  padding: 10px;
+  margin: 0px 0 0;
+  border-bottom: 2px dashed $bleu;
+
+  //margin-bottom: 30px;
+  //border-radius: 0px 0px 5px 5px;
+  //position: absolute;
+  //width: 100%;
+  //left: 0;
+  //background-color: $bleu;
+
+  a {
+    line-height: 1.4;
+    color: $black;
+
+    svg {
+      fill: white !important;
+      max-height: 30px;
+    }
+
+    h4 {
+      font-size: 1.5em;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+
+      > span {
+        color: darken($dark-beige, 10%) !important;
+      }
+
+      &:before {
+        content: "nouveau";
+        letter-spacing: 0.2em;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-right: 15px;
+        font-family: $playfair;
+      }
+    }
+  }
+}
+
+
+  .appareil {
+    background-color: #e8f3f2 !important;
+    min-height: 660px;
+    .content {
+      padding: 30px;
+      span {
+        font-family: "Amatic SC", cursive;
+        font-size: 2.4em;
+        color: darken($beige, 40%);
+      }
+      h3{
+        font-size: 3.6em;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+    }
+  }
+.nouveaux{
+  border: 2px dashed $bleu;
+  p{
+    text-align: justify;
+  }
+}
+.imp{
+  background-color: $beige;
+  padding: 15px 30px;
+}

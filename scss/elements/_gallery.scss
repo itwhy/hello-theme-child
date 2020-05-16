@@ -1,0 +1,316 @@
+$time: .2s;
+
+.header-gallery {
+  overflow: hidden;
+  position: relative;
+  height: 70vh;
+  width: 100%;
+
+  .photo {
+    height: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .open-gallery {
+    background-color: darken($dark-blue, 10%);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    z-index: 9;
+    bottom: -1px;
+    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    transition: height $time ease-in, width $time ease-in;
+
+    svg {
+      height: 30px;
+      fill: white;
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      transform: rotate(0deg);
+      transition: transform $time ease-in, bottom $time ease-in, left $time ease-in;
+    }
+  }
+
+  &:hover {
+    .open-gallery {
+      height: 130px;
+      width: 130px;
+      transition: height $time ease-in, width $time ease-in;
+
+      svg {
+        transform: rotate(-45deg);
+        bottom: 20px;
+        left: 20px;
+        transition: transform $time ease-in, bottom $time ease-in, left $time ease-in;
+      }
+    }
+  }
+}
+
+$marges: 0px;
+
+.wide-gallery {
+  z-index: 999999999;
+  display: none;
+  position: fixed;
+  top: $marges;
+  left: $marges;
+  right: $marges;
+  bottom: $marges;
+
+  .close-gallery{
+    height: 70px;
+    width: 70px;
+    padding: 15px;
+    z-index: 99999;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    background-color: $dark-blue;
+    transition: background-color .3s, padding .3s ease;
+
+    svg{
+      max-width: 100%;
+      fill:white;
+    }
+    &:hover{
+      padding: 20px;
+      background-color: darken($dark-blue, 10%);
+      transition: background-color .3s, padding .3s ease;
+    }
+  }
+  .nav-gallery {
+    background-color: $dark-blue;
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: -60px;
+    overflow: hidden;
+
+    .numbers {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      @include respond-to(768px) {
+        display: none !important;
+      }
+      
+
+      a {
+        cursor: pointer;
+        font-family: $roboto;
+        font-size: 2em;
+        @include respond-to(1024px) {
+        font-size: 1.2em !important;
+      }
+        font-weight: $fw-bolder;
+        color: white;
+        margin: 15px;
+        line-height: 1em;
+        padding: 5px;
+        border: 1px solid rgba(white, .4);
+        border-radius: 60px;
+        transition: color .3s, border .3s;
+
+        &.activ {
+          border: 2px solid darken($dark-blue, 20%);
+          color: darken($dark-blue, 20%);
+          transition: color .3s, border .3s;
+        }
+
+      }
+    }
+
+    span {
+      cursor: pointer;
+      display: block;
+      background-color: rgba($black, 0);
+      color: white;
+      padding: 20px;
+      position: absolute;
+      padding: 14px 10%;
+      z-index: 999999;
+      transition: background-color .2s;
+
+      &:hover{
+        background-color: rgba($black, .2);
+        transition: background-color .2s;
+      }
+      svg {
+        fill: white;
+        height: 30px;
+        transform: rotate(180deg);
+      }
+
+      &.right {
+        right: 0;
+        content: ">";
+
+        svg {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  .images {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: none;
+    top: 0px;
+    background: $black;
+    > .photo {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      display: none;
+      top: 46%;
+      transform: translateY(-50%);
+      img{
+        height: 85vh;
+        
+      }
+      @include respond-to(768px) {
+        width: 200%;
+        top: 50%;
+        left: 50%;
+        img{
+        height: auto;
+          //width: 100%;
+        
+      }
+        transform: translate(-50%, -50%);
+      }  
+
+      &:first-child {
+        opacity: 1;
+        display: block;
+      }
+    }
+  }
+}
+
+.back-gallery {
+  z-index: 99999999999;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translateY(100%);
+  opacity: 1;
+  width: 100%;
+  background-color: darken($bleu, 7%);
+}
+
+.show {
+  display: block !important;
+}
+
+/*body {
+  height: 100%;
+  overflow: hidden !important;
+}*/
+///// GALLERY LE CABINET /////
+.go-gallery {
+  cursor: pointer;
+}
+
+.gall-img {
+  background-size: cover !important;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  img {
+    //max-height: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width:540px){
+  .mobile-gallery{
+    display: none;
+  }
+}
+.mobile-gallery{
+  #img-m1{
+    height: 300px;
+    width: 100%;
+  }
+  #img-m2{
+    height: 300px;
+    width: 100%;
+  }
+  #btn-gallery{
+    background-color: lighten($beige, 6%);
+    padding: 30px 0;
+    margin: 15px 0;
+  }
+  }
+.c4.r2 {
+  @include respond-to(540px) {
+    display: none;
+  }
+  #img1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  #img2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-position: center center !important;
+    
+  }
+
+  #img3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  #img4 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  #img5 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 4;
+        background-position: center center !important;
+
+  }
+
+  #btn-gallery {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    //
+    background: lighten($beige, 9%);
+    height: 100%;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+}

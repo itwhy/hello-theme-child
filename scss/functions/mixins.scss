@@ -1,0 +1,49 @@
+////////////////////////  STATE SELECTOR  ////////////////////////
+/*
+.my-element {
+    color: red;
+
+    @include on-event {
+        color: blue;
+    }
+}
+*/
+@mixin on-event($self: false) {
+  @if $self {
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+
+  @else {
+
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/////////////// RESPONSIVE MIXIN ///////////////////////
+/*
+.selector {
+  color: red;
+  
+  @include respond-to('small') {
+    color: blue;
+  }
+}
+*/
+@mixin respond-to($breakpoint:540px) {
+
+  // If the key exists in the map
+  // Prints a media query based on the value
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
